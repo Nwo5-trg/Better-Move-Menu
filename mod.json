@@ -1,0 +1,173 @@
+{
+	"geode": "4.5.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "nwo5.better_move_menu",
+	"name": "Better Move Menu",
+	"version": "v1.0.0",
+	"developer": "Nwo5",
+	"description": "recreating better edit features pt 50 or smth",
+	"resources": {"sprites": ["resources/*.png"]},
+	"tags": ["editor", "utility", "customization", "interface", "offline", "enhancement"],
+	"links": {"source": "https://github.com/Nwo5-trg/Better-Move-Menu"},
+	"dependencies": {
+		"geode.node-ids": ">=1.21.0"
+	},
+	"settings": {
+		"default-move": {
+			"type": "float",
+			"name": "Default Move",
+			"min": 1,
+			"max": 300000,
+			"default": 15
+		},
+		"default-rotation": {
+			"type": "float",
+			"name": "Default Rotation",
+			"min": 0,
+			"max": 360,
+			"default": 45
+		},
+		"page-length": {
+			"type": "int",
+			"name": "Page Length",
+			"min": 1,
+			"max": 20,
+			"default": 12
+		},
+		"show-settings-button": {
+			"type": "bool",
+			"name": "Show Settings Button",
+			"description": "requires editor reload just because :3c",
+			"default": true
+		},
+		"shortcut-label-0": {
+			"type": "string",
+			"name": "Move Shortcut 1 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "1/30"
+		},
+		"shortcut-value-0": {
+			"type": "float",
+			"name": "Move Shortcut 1",
+			"min": 1,
+			"max": 300000,
+			"default": 1
+		},
+		"shortcut-label-1": {
+			"type": "string",
+			"name": "Move Shortcut 2 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "1/10"
+		},
+		"shortcut-value-1": {
+			"type": "float",
+			"name": "Move Shortcut 2",
+			"min": 1,
+			"max": 300000,
+			"default": 3
+		},
+		"shortcut-label-2": {
+			"type": "string",
+			"name": "Move Shortcut 3 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "1/4"
+		},
+		"shortcut-value-2": {
+			"type": "float",
+			"name": "Move Shortcut 3",
+			"min": 1,
+			"max": 300000,
+			"default": 7.5
+		},
+		"shortcut-label-3": {
+			"type": "string",
+			"name": "Move Shortcut 4 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "1/2"
+		},
+		"shortcut-value-3": {
+			"type": "float",
+			"name": "Move Shortcut 4",
+			"min": 1,
+			"max": 300000,
+			"default": 15
+		},
+		"shortcut-label-4": {
+			"type": "string",
+			"name": "Move Shortcut 5 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "1"
+		},
+		"shortcut-value-4": {
+			"type": "float",
+			"name": "Move Shortcut 5",
+			"min": 1,
+			"max": 300000,
+			"default": 30
+		},
+		"shortcut-label-5": {
+			"type": "string",
+			"name": "Move Shortcut 6 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "5"
+		},
+		"shortcut-value-5": {
+			"type": "float", 
+			"name": "Move Shortcut 6",
+			"min": 1,
+			"max": 300000,
+			"default": 150
+		},
+		"shortcut-label-6": {
+			"type": "string",
+			"name": "Rotate Shortcut 1 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "26.5"
+		},
+		"shortcut-value-6": {
+			"type": "float",
+			"name": "Rotate Shortcut 1",
+			"min": 0,
+			"max": 360,
+			"default": 26.5
+		},
+		"shortcut-label-7": {
+			"type": "string",
+			"name": "Rotate Shortcut 2 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "45"
+		},
+		"shortcut-value-7": {
+			"type": "float",
+			"name": "Rotate Shortcut 2",
+			"min": 0,
+			"max": 360,
+			"default": 45
+		},
+		"shortcut-label-8": {
+			"type": "string",
+			"name": "Rotate Shortcut 3 Label",
+			"filter": "abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890/.-_+=*',?~` ",
+			"default": "90"
+		},
+		"shortcut-value-8": {
+			"type": "float",
+			"name": "Rotate Shortcut 3",
+			"min": 0,
+			"max": 360,
+			"default": 90
+		},
+		"removed-buttons": {
+			"type": "string",
+			"name": "Removed Buttons (scuffed normal users prolly dont use)",
+			"description": "requires editor reload just because :3c | removes buttons from the bottom button bar with whatever index they would have if none of them are hidden, for example to remove the rotate buttons, write 2,3,4,5,6,7",
+			"default": "",
+			"filter": "1234567890,"
+		}
+	}
+}
