@@ -8,7 +8,7 @@
 	},
 	"id": "nwo5.better_move_menu",
 	"name": "Better Move Menu",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "Nwo5",
 	"description": "recreating better edit features pt 50 or smth",
 	"resources": {"sprites": ["resources/*.png"]},
