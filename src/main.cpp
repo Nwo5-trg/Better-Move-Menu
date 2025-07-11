@@ -22,12 +22,12 @@ class $modify(EditUI, EditorUI) {
         // (hook prio or smth maybe not sure and idc enough to find out)
         // so fuck you this is easiest way to get the vanilla bar "out of the picture"
         m_editButtonBar->setScale(0.0f);
-        return true;
+        // fine ill do it
+        CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(EditUI::updateMoveMenuVisibility), this, 0, false);
+        return true; 
     }
 
-    void draw() {
-        EditorUI::draw();
-        // from be server: "i should never touch editorui again, but it *technically* works"
+    void updateMoveMenuVisibility(float dt) {
         if (moveMenu) moveMenu->setVisible(m_editButtonBar->isVisible());
     }
 
