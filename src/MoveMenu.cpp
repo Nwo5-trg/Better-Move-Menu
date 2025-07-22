@@ -177,8 +177,8 @@ void MoveMenu::update() {
         }
 
         if (!m_dynamicArrowButtonPosition) {
-            m_previousButton->setPosition((maxCount * -12.5f) + 25.0f, 0.0f);
-            m_nextButton->setPosition((maxCount * 12.5f) + 25.0f, 0.0f);
+            m_previousButton->setPosition(ccp((maxCount * -12.5f) - 25.0f, 0.0f) + m_buttonMenu->getPosition());
+            m_nextButton->setPosition(ccp((maxCount * 12.5f) + 25.0f, 0.0f) + m_buttonMenu->getPosition());
         }
 
         m_nextButton->setVisible(m_pageLength < buttons->count());
