@@ -1,5 +1,5 @@
 {
-	"geode": "4.5.0",
+	"geode": "4.6.0",
 	"gd": {
 		"win": "2.2074",
 		"android": "2.2074",
@@ -44,6 +44,12 @@
 			"name": "Show Settings Button",
 			"description": "requires editor reload just because :3c",
 			"default": true
+		},
+		"dynamic-arrow-button-position": {
+			"type": "bool",
+			"name": "Dynamic Arrow Button Position",
+			"description": "make arrow buttons get positoned based on teh amount of buttons in the page",
+			"default": false
 		},
 		"shortcut-label-0": {
 			"type": "string",

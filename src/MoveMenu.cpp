@@ -17,7 +17,7 @@ MoveMenu* MoveMenu::create(EditorUI* editor) { // we copying geodes source code 
 bool MoveMenu::init(EditorUI* editor) {
     if (!CCMenu::init()) return false;
     this->setZOrder(1);
-    this->setAnchorPoint({0.0f, 0.0f});
+    this->setAnchorPoint({0.5f, 0.0f});
 
     auto mod = Mod::get();
     m_editor = editor;
@@ -126,6 +126,7 @@ bool MoveMenu::init(EditorUI* editor) {
 void MoveMenu::update() {
     auto mod = Mod::get();
 
+    m_dynamicArrowButtonPosition = mod->getSettingValue<bool>("dynamic-arrow-button-position");
     m_pageLength = mod->getSettingValue<int64_t>("page-length");
     m_removedButtons = parseIntStringToSet(mod->getSettingValue<std::string>("removed-buttons"));
 
@@ -152,10 +153,12 @@ void MoveMenu::update() {
         m_pages = std::ceil((buttons->count() + m_pageLength - 1) / m_pageLength);
         if (m_page >= m_pages) m_page = 0;
 
+        int maxCount = 0;
         for (int i = 0; i < m_pages; i++) {
             int start = i * m_pageLength;
             int end = std::min((int)buttons->count(), start + m_pageLength);
             int count = end - start;
+            if (count > maxCount) maxCount = count;
             float total = 25.0f * (count - 1);
             float startX = total / -2;
 
@@ -172,6 +175,12 @@ void MoveMenu::update() {
                 }
             }
         }
+
+        if (!m_dynamicArrowButtonPosition) {
+            m_previousButton->setPosition((maxCount * -12.5f) + 25.0f, 0.0f);
+            m_nextButton->setPosition((maxCount * 12.5f) + 25.0f, 0.0f);
+        }
+
         m_nextButton->setVisible(m_pageLength < buttons->count());
         m_previousButton->setVisible(m_pageLength < buttons->count());
     }

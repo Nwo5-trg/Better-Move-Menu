@@ -15,20 +15,21 @@ class $modify(EditUI, EditorUI) {
         if (!EditorUI::init(editorLayer)) return false;
         NodeIDs::provideFor(this); // trust issues
         moveMenu = MoveMenu::create(this);
-        moveMenu->setPosition(Loader::get()->isModLoaded("hjfod.betteredit") ? 292.0f : 285.0f, 60.0f); // mind my scuffed positioning i really dont care
-        moveMenu->setScale(0.85f);
+        moveMenu->setPosition(Loader::get()->isModLoaded("hjfod.betteredit") ? 250.0f : 242.5f, 60.0f); // mind my scuffed positioning i really dont care
+        moveMenu->setScale(m_editButtonBar->getScale() * 0.85); // i make good positioning decisions
         this->addChild(moveMenu);
         // set visible even whenever i set it every time an update happens just isnt working 
         // (hook prio or smth maybe not sure and idc enough to find out)
         // so fuck you this is easiest way to get the vanilla bar "out of the picture"
         m_editButtonBar->setScale(0.0f);
         // fine ill do it
-        CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(EditUI::updateMoveMenuVisibility), this, 0, false);
+        CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(EditUI::updateMoveMenu), this, 0, false);
         return true; 
     }
 
-    void updateMoveMenuVisibility(float dt) {
-        if (moveMenu) moveMenu->setVisible(m_editButtonBar->isVisible());
+    void updateMoveMenu(float dt) {
+        if (!moveMenu) return;
+        moveMenu->setVisible(m_editButtonBar->isVisible());
     }
 
     void moveObject(GameObject* p0, CCPoint p1) {

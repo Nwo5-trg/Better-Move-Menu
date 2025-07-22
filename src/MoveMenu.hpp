@@ -5,6 +5,7 @@ private:
     EditorUI* m_editor;
     
     bool m_transformLock = false;
+    bool m_dynamicArrowButtonPosition = false;
     float m_moveStep;
     float m_rotationStep;
     int m_pageLength;
