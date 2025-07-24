@@ -21,7 +21,7 @@ class $modify(EditUI, EditorUI) {
         auto pos = ccp( // mind my scuffed positioning i really dont care
             Loader::get()->isModLoaded("hjfod.betteredit") 
             ? (winSize.width / 2) - 35.0f 
-            : (winSize.width / 2) - 27.5f, 60.0f
+            : (winSize.width / 2) - 42.5f, 60.0f
         ) * m_editButtonBar->getScale();
         moveMenu->setPosition(pos);
         moveMenu->setScale(m_editButtonBar->getScale() * 0.85); // i make good positioning decisions
