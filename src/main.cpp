@@ -15,7 +15,15 @@ class $modify(EditUI, EditorUI) {
         if (!EditorUI::init(editorLayer)) return false;
         NodeIDs::provideFor(this); // trust issues
         moveMenu = MoveMenu::create(this);
-        moveMenu->setPosition(ccp(Loader::get()->isModLoaded("hjfod.betteredit") ? 250.0f : 242.5f, 60.0f) * m_editButtonBar->getScale()); // mind my scuffed positioning i really dont care
+
+        auto winSize = CCDirector::get()->getWinSize();
+
+        auto pos = ccp( // mind my scuffed positioning i really dont care
+            Loader::get()->isModLoaded("hjfod.betteredit") 
+            ? (winSize.width / 2) - 35.0f 
+            : (winSize.width / 2) - 27.5f, 60.0f
+        ) * m_editButtonBar->getScale();
+        moveMenu->setPosition(pos);
         moveMenu->setScale(m_editButtonBar->getScale() * 0.85); // i make good positioning decisions
         this->addChild(moveMenu);
         // set visible even whenever i set it every time an update happens just isnt working 
